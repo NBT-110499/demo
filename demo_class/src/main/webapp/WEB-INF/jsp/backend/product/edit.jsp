@@ -97,6 +97,22 @@
                         </div>
 
                     </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="fileUploadId" class="form-label">Tải ảnh</label>
+                                <input type="file" class="form-control" id="fileUploadId" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <img id="outputImage" width="100px"></img>
+                            <div class="mb-3">
+                                <input hidden type="text" name="image" class="form-control" id="fileUploadName">
+                            </div>
+                        </div>
+
+
+                    </div>
                     <button type="submit" class="btn btn-primary">Tạo mới</button>
                 </form>
             </div>

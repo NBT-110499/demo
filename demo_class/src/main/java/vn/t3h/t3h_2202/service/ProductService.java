@@ -39,6 +39,8 @@ public class ProductService {
             throw new RuntimeException("product không tồn tại");
         }
         ProductEntity productEntity = productDto.conVertEntity1();
+        productEntity.setCreateBy(((UserEntity)SecurityContextHolder
+                .getContext().getAuthentication().getPrincipal()).getId());
         productRepository.save(productEntity);
         return productDto;
     }

@@ -58,7 +58,6 @@ public class BackendProductController {
         productService.danhsach(pagingAndSortObject);
         return "backend/product/list";
     }
-    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping("list2")
     public String viewHomePage(Model model, @RequestParam("keyword") String keyword) {
         List<ProductEntity> listProducts = productService.listAll(keyword);
@@ -79,7 +78,7 @@ public class BackendProductController {
 //        request.setAttribute();
         redirectAttributes.addFlashAttribute("message", "Cập nhật sản phẩm " + productDto.getName() + " thành công!");
 //        response.sendRedirect("/backend/user/create");
-        return "redirect:/backend/product/list";
+        return "redirect:/backend/product/create2";
     }
     @RequestMapping(value = "/delete")
     public String deleteUser(@RequestParam Long Id, Model model) throws SQLException {
