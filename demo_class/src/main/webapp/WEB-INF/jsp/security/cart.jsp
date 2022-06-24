@@ -46,8 +46,8 @@
 <%--    </tr>--%>
 <%--</c:forEach>--%>
 <%--</tbody>--%>
-<div class="table-responsive cart_info">
-    <table class="table table-condensed">
+<div class="table-responsive cart_info" style="border: 1px ;margin-bottom: 50px;box-sizing: border-box">
+    <table class="table table-condensed" style="width: 100%;margin-bottom: 20px;max-width: 100%;background-color: transparent;border-collapse: collapse;border-spacing: 0;display: table;border-color: gray">
         <thead>
         <tr class="cart_menu">
             <td class="image">Item</td>
@@ -84,14 +84,26 @@
             <td class="cart_delete">
                 <a class="cart_quantity_delete" href="/sercurity/delete/${c.userEntity.id}/${c.productEntity.id}"><i class="fa fa-times"></i></a>
             </td>
-            <td class="cart_delete">
-                <a class="btn btn-default check_out" href="/checkout/${c.userEntity.id}/${c.total1}">Check Out</a>
-            </td>
         </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
+<section id="do_action">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="total_area" style="border 1px solid #E6E4DF;color: #696763;padding: 30px 25px 30px 0;margin-bottom: 80px">
+                    <ul style="display: block;list-style-type: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 0px; ">
+                        <li>Phí Vận Chuyển <span>Free</span></li>
+                        <h2><li>Tổng giá <span>${totalmoney}</span></li></h2>
+                    </ul>
+                    <a class="btn btn-default check_out" style="color: #0f69c6;background-color: red" href="/checkout/${userId}/${totalmoney}">Check Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div>
 </div>
 

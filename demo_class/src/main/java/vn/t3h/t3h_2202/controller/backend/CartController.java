@@ -26,6 +26,8 @@ public class CartController {
     @RequestMapping("cart/{id}")
     public String cartPage(Model model, @PathVariable Long id){
      model.addAttribute("cart",cartService.findCartByUserId(id));
+        model.addAttribute("totalmoney",cartService.sumMoney(id));
+        model.addAttribute("userId",id);
         return "security/cart" ;
     }
     @PostMapping(value = "addCart-form",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
@@ -57,13 +59,13 @@ public class CartController {
         cartService.deleteCart(idUser,idProduct);
         return "redirect:/sercurity/cart/" +idUser;
     }
-    @RequestMapping("/{id}")
-    public String cartPage11( Model model, @PathVariable Long id){
-        model.addAttribute("cart",cartService.findCartByUserId(id));
-        model.addAttribute("totalmoney",cartService.sumMoney(id));
-        model.addAttribute("userId",id);
-
-        return "cart" ;
-    }
+//    @RequestMapping("/{id}")
+//    public String cartPage11( Model model, @PathVariable Long id){
+//        model.addAttribute("cart",cartService.findCartByUserId(id));
+//        model.addAttribute("totalmoney",cartService.sumMoney(id));
+//        model.addAttribute("userId",id);
+//
+//        return "cart" ;
+//    }
 
 }

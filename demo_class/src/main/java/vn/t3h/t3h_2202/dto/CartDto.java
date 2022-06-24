@@ -16,6 +16,7 @@ public class CartDto {
     public Long idProduct;
     public Long quantity;
     public Long total1;
+    public Long total;
     public ProductEntity productEntity;
     public UserEntity userEntity;
 
